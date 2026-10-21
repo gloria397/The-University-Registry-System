@@ -22,18 +22,6 @@ public class Student {
     public String getmajor() {
         return major;
     }
-    public void setId(int Id) {
-        this.Id = Id;
-    }
-    public void setName(String name) {
-        this.Name = name;
-    }
-    public void setgpa(double gpa) {
-        this.gpa = gpa;
-    }
-    public void setmajor(String Major) {
-        major = Major;
-    }
     @Override
     public String toString() {
         return "student{"+
