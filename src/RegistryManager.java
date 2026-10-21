@@ -10,7 +10,8 @@ public class RegistryManager {
     private List<Student> students = new ArrayList<>();
 
     public void loadStudents(String fileName) {
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line;
             br.readLine();
 
@@ -23,7 +24,8 @@ public class RegistryManager {
                 students.add(new Student(id, name, gpa, major));
             }
             System.out.println("student registered successfully");
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
