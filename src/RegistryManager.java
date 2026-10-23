@@ -1,9 +1,9 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.Scanner;
 
 
 public class RegistryManager {
@@ -45,4 +45,39 @@ public class RegistryManager {
                     System.out.println(student.getname()));
         });
     }
-}
+    public void addStudent(String fileName) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter student ID: ");
+        int id = input.nextInt();
+        input.nextLine();
+
+        System.out.print("Enter student name: ");
+        String name = input.nextLine();
+
+        System.out.print("Enter student GPA: ");
+        double gpa = input.nextDouble();
+        input.nextLine();
+
+        System.out.print("Enter student major: ");
+        String major = input.nextLine();
+
+        File file = new File(fileName);
+
+        System.out.println("File location: " + file.getAbsolutePath());
+
+        try (BufferedWriter writer = new BufferedWriter(
+                new FileWriter(file, true))) {
+
+            writer.write(id + "," + name + "," + gpa + "," + major);
+            writer.newLine();
+
+            System.out.println("Student saved to file successfully!");
+
+            students.add(new Student(id, name, gpa, major));
+
+        } catch (Exception e) {
+            System.out.println("Error saving student:");
+        }
+    }
+    }

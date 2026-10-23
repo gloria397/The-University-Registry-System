@@ -3,3 +3,4 @@ ID  ,  Names  , GPA ,  Majors
 102 , Bob Jones , 2.90 , Mechanical Engineering
 103, Charlie Brown , 3.40 , Data Science
 104, Diana Prince , 3.95 , Computer Science
+105,gloria,4.5,Computer Science

@@ -1,5 +1,4 @@
 import java.io.File;
-
 public class Main {
     public static void main(String[] args) {
         RegistryManager registryManager = new RegistryManager();
@@ -14,6 +13,9 @@ public class Main {
 
             System.out.println("STUDENTS GROUPED BY MAJOR:");
             registryManager.groupStudentByMajor();
+
+            System.out.println("ADD STUDENTS ");
+            registryManager.addStudent(file.getAbsolutePath());
         }
         else{
             System.out.println("No such file or directory");
